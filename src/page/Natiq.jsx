@@ -14,7 +14,6 @@ export default function Natiq() {
       <NatiqForm />
 
       <NatiqAudio />
-      <NatiqDurations />
     </div>
   );
 }
