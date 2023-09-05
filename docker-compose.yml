@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    # Use the same name as your app
+    container_name: natiq
+    # Build the Docker image using the Dockerfile in the current directory
+    build: .
+    # Expose the same port as defined in your Dockerfile
+    ports:
+      - "8080:3000"
+    # Set environment variables if needed
+    environment:
+      - NODE_ENV=production
+    # Optionally, specify a volume to persist data (e.g., for local development)
+    volumes:
+      - ./app:/app
+    # Optionally, specify dependencies and links to other services
+
+  # Add any additional services your app requires here (e.g., a database)
+
+# Define networks, volumes, and other configurations as needed
