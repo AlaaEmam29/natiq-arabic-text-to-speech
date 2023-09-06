@@ -3,21 +3,29 @@ import styled from "styled-components";
 const Button = styled.button`
   all: unset;
   color: white;
-  background-color: #1c75bc;
-  padding: 1rem 3rem;
+  background-color: var(--bright-blue);
+  padding: 0.7rem 4rem;
   border-radius: 2rem;
   cursor: pointer;
+  font-size: 1.7rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  text-align: center;
 
   &:hover {
-    background-color: #145a9e;
+    background-color: var(--color-hover);
   }
 
   &:active {
-    background-color: #0f4372;
+    background-color: var(--color-hover);
   }
 
   &:focus {
-    outline: 2px solid #1c75bc;
+    outline: 2px solid var(--color-hover);
+  }
+  &:disabled {
+    background-color: var(--color-input-dark);
+    opacity: 0.5;
   }
 `;
 

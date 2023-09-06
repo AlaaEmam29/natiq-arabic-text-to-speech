@@ -1,33 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useContextNatiq } from "../../context/NatiqContext";
-import { styled } from "styled-components";
 import FormRow from "../../ui/FormRow";
 import Form from "../../ui/Form";
 import Button from "../../ui/Button";
 import { isArabic } from "../../utils/helper";
 import Textarea from "../../ui/Textarea";
 import { FaCheck, FaTimes, FaSpinner } from "react-icons/fa";
-
-const StyledForm = styled(Form)`
-  position: relative;
-`;
-
-const SubmitButton = styled(Button)`
-  position: absolute;
-  bottom: 5%;
-  width: 25%;
-  left: 50%;
-  text-align: center;
-`;
-
-const ClearButton = styled(Button)`
-  position: absolute;
-  bottom: 5%;
-  width: 25%;
-  left: 10%;
-  text-align: center;
-`;
 
 export default function NatiqForm() {
   const { handleSubmit, register, formState, setValue } = useForm();
@@ -52,8 +31,11 @@ export default function NatiqForm() {
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit(submitForm, errorForm)}>
-      <FormRow label="Enter Arabic text" error={errors?.text?.message}>
+    <Form onSubmit={handleSubmit(submitForm, errorForm)}>
+      <FormRow
+        label="Type or paste Arabic text here"
+        error={errors?.text?.message}
+      >
         <Textarea
           dir="rtl"
           name="text"
@@ -68,7 +50,10 @@ export default function NatiqForm() {
         />
       </FormRow>
       <FormRow type="row">
-        <SubmitButton disabled={isLoading} type="submit">
+        <Button type="reset" disabled={isLoading} onClick={handleClear}>
+          <FaTimes /> Clear
+        </Button>
+        <Button disabled={isLoading} type="submit">
           {isLoading ? (
             <FaSpinner className="icon-spin" />
           ) : (
@@ -76,12 +61,8 @@ export default function NatiqForm() {
               <FaCheck /> Echo
             </>
           )}
-        </SubmitButton>
-        <ClearButton type="reset" disabled={isLoading} onClick={handleClear}>
-          <FaTimes /> Clear
-        </ClearButton>
+        </Button>
       </FormRow>
-
-    </StyledForm>
+    </Form>
   );
 }

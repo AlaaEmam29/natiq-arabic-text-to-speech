@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { toast } from "react-hot-toast";
 import styled, { css } from "styled-components";
 
@@ -18,7 +17,9 @@ const StyledFormRow = styled.div`
     props.type === "row" &&
     css`
       flex-direction: row;
-      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
     `}
 
 

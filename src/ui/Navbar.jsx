@@ -5,7 +5,7 @@ const StyledList = styled.ul`
   display: flex;
   align-items: center;
   gap: 3rem;
-  font-size: 2rem;
+  font-size: 1.7rem;
   padding: 0;
   margin: 0;
 `;
@@ -15,13 +15,12 @@ const StyledListItem = styled.li`
 `;
 
 const StyledLink = styled(NavLink)`
-  color: #333;
   transition: color 0.3s ease;
+  font-weight: 500;
 
   &:hover,
   &.active {
-    color: #07c6ae;
-    font-weight: bold;
+    color: var(--active);
   }
 `;
 

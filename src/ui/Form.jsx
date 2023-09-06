@@ -7,6 +7,10 @@ const Form = styled.form`
   overflow: hidden;
   font-size: 1.4rem;
   width: 80rem;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
 `;
 
 export default Form;

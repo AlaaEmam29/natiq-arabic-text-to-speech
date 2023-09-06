@@ -9,11 +9,12 @@ const StyledContainer = styled.div`
   min-height: 100vh;
   text-align: center;
   h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     letter-spacing: 0.15rem;
   }
   p {
     font-size: 2rem;
+    color: rgba(30, 55, 90, 0.7);
   }
 `;
 const Container = ({ children }) => {

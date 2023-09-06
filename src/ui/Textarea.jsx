@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
 const Textarea = styled.textarea`
-  border: 1px solid #f1f1f1;
-  background-color: #f1f1f1;
+  border: 1px solid var(--color-input-bright);
+  background-color: var(--color-input-bright);
   border-radius: 7px;
   padding: 0.8rem 1.2rem;
   width: 100%;
@@ -11,7 +11,7 @@ const Textarea = styled.textarea`
   font-size: 2.2rem;
 
   &:disabled {
-    background-color: #e9ecef;
+    background-color: var(--color-input-dark);
     opacity: 0.5;
   }
 `;

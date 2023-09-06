@@ -2,11 +2,19 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 :root {
-  --color-brand-600: #07C6AE;
 
-  --color-grey-200: #e5e7eb;
-  --color-grey-500: #6b7280;
---color-text:#121B74;
+  --light-blue: #E9F1FA;
+  --bright-blue: #00ABE4;
+      --white: #FFFFFF;
+      --color-text: #1e375a;
+      --active : #2364d2;
+      --color-hover: #2373ff;
+      --color-input-bright: #A9CAF1;
+      --color-input-dark: #6B93D9
+
+;
+
+
 }
 
 *,
@@ -23,9 +31,9 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  color: var(--color-text);
-
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  
+  color: var( --color-text);
   min-height: 100vh;
   line-height: 1.5;
   font-size: 1.6rem;
@@ -47,17 +55,13 @@ button {
   cursor: not-allowed;
 }
 
-select:disabled,
-input:disabled {
-  background-color: var(--color-grey-200);
-  color: var(--color-grey-500);
-}
+
 
 input:focus,
 button:focus,
 textarea:focus,
 select:focus {
-  outline: 2px solid var(--color-brand-600);
+  outline: 2px solid var(--color-input-dark);
   outline-offset: -1px;
 }
 
@@ -103,5 +107,6 @@ img {
 .hidden{
   display: none;
 }
+
 `;
 export default GlobalStyle;

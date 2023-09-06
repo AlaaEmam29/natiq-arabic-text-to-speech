@@ -8,7 +8,7 @@ const NatiqProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [audioData, setAudioData] = useState(null);
   const [durations, setDurations] = useState(null);
-  const handleNatiqApi = async textData => {
+  const handleNatiqApi = async (textData) => {
     setIsLoading(true);
     const lastWord = textData.split(" ").pop();
     const textWithEcho = `${textData} ${lastWord} ${lastWord}`;

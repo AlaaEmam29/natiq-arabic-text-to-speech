@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   web:
     # Use the same name as your app
@@ -17,5 +17,4 @@ services:
     # Optionally, specify dependencies and links to other services
 
   # Add any additional services your app requires here (e.g., a database)
-
 # Define networks, volumes, and other configurations as needed

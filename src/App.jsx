@@ -1,11 +1,14 @@
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
-import Home from "./page/Home";
-import Natiq from "./page/Natiq";
-import About from "./page/About";
 import NotFound from "./page/NotFound";
 import { NatiqProvider } from "./context/NatiqContext";
 import { Toaster } from "react-hot-toast";
+import Loading from "./ui/Loading";
+
+const Home = lazy(() => import("./page/Home"));
+const Natiq = lazy(() => import("./page/Natiq"));
+const About = lazy(() => import("./page/About"));
 
 function App() {
   return (
@@ -14,9 +17,30 @@ function App() {
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<Navigate replace to="/home" />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/natiq" element={<Natiq />} />
-            <Route path="/about" element={<About />} />
+            <Route
+              path="/home"
+              element={
+                <Suspense fallback={<Loading/>}>
+                  <Home />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/natiq"
+              element={
+                <Suspense fallback={<Loading/>}>
+                  <Natiq />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <Suspense fallback={<Loading/>}>
+                  <About />
+                </Suspense>
+              }
+            />
 
             <Route path="*" element={<NotFound />} />
           </Route>

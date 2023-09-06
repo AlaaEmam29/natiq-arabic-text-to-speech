@@ -13,7 +13,11 @@ export default function NatiqAudio() {
           src={`data:audio/wav;base64,${audioData}`}
           autoPlay
           controls
-          onPlay={e => console.log("onPlay")}
+          onPlay={(e) => console.log("onPlay")}
+          style={{
+            marginTop: "1rem",
+            marginBottom: "1rem",
+          }}
         />
       )}
     </>
